@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation
 
-  index do
+  index :title => "System Users" do
     selectable_column
     id_column
     column :email
