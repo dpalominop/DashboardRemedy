@@ -1,8 +1,8 @@
-ActiveAdmin.register Platform do
+ActiveAdmin.register Employee do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-    permit_params :name, :description, :ip, employee_ids: []
+    permit_params :username, :name, :document, platform_ids: []
 #
 # or
 #
@@ -11,24 +11,28 @@ ActiveAdmin.register Platform do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-    index :title => "Platforms" do
+
+    index :title => "Employees" do
         selectable_column
         id_column
+        column :username
         column :name
-        column :ip
+        column :document
         actions
     end
 
+    filter :username
     filter :name
-    filter :ip
+    filter :document
 
     form do |f|
-        f.inputs "Platform Details" do
+        f.inputs "Employee Details" do
+            f.input :username
             f.input :name
-            f.input :description
-            f.input :ip
-            f.input :employee_ids, as: :check_boxes, collection: Employee.all, :label => 'Employees'
+            f.input :document
+            f.input :platform_ids, as: :check_boxes, collection: Platform.all, :label => 'Platforms'
         end
         f.actions
     end
+
 end

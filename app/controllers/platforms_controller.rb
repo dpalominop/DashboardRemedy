@@ -1,6 +1,6 @@
 class PlatformsController < InheritedResources::Base
   def create
-    Person.create(platform_params)
+    Platform.create(platform_params)
   end
 
   def update

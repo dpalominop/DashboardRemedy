@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620230047) do
+ActiveRecord::Schema.define(version: 20170621152730) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,18 +26,27 @@ ActiveRecord::Schema.define(version: 20170620230047) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "conections", id: false, force: :cascade do |t|
+    t.integer "platform_id"
+    t.integer "employee_id"
+    t.index ["platform_id", "employee_id"], name: "index_conections_on_platform_id_and_employee_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "username"
+    t.string "name"
+    t.string "document"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["document"], name: "index_employees_on_document"
+  end
+
   create_table "platforms", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.string "ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "platforms_users", id: false, force: :cascade do |t|
-    t.integer "platform_id"
-    t.integer "user_id"
-    t.index ["platform_id", "user_id"], name: "index_platforms_users_on_platform_id_and_user_id"
   end
 
   create_table "users", force: :cascade do |t|
