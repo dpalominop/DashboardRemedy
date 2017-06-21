@@ -35,4 +35,21 @@ ActiveAdmin.register Employee do
         f.actions
     end
 
+    show do
+        panel "Platforms" do
+            table_for employee.platforms do
+                column :name
+                column :description
+                column :ip
+            end
+        end
+    end
+
+    sidebar "Employee Details", only: :show do
+        attributes_table_for employee do
+            row :username
+            row :name
+            row :document
+        end
+    end
 end

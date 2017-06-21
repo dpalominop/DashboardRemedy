@@ -31,4 +31,22 @@ ActiveAdmin.register Platform do
         end
         f.actions
     end
+
+    show do
+        panel "Employees" do
+            table_for platform.employees do
+                column :username
+                column :name
+                column :document
+            end
+        end
+    end
+
+    sidebar "Employee Details", only: :show do
+        attributes_table_for platform do
+            row :name
+            row :description
+            row :ip
+        end
+    end
 end
