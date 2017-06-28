@@ -27,7 +27,7 @@ ActiveAdmin.register Platform do
             f.input :name
             f.input :description
             f.input :ip
-            f.input :employee_ids, as: :check_boxes, collection: Employee.all, :label => 'Employees'
+            f.input :employee_ids, as: :tags, collection: Employee.all, :label => 'Employees'
         end
         f.actions
     end

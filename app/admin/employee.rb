@@ -30,7 +30,7 @@ ActiveAdmin.register Employee do
             f.input :username
             f.input :name
             f.input :document
-            f.input :platform_ids, as: :check_boxes, collection: Platform.all, :label => 'Platforms'
+            f.input :platform_ids, as: :tags, collection: Platform.all, :label => 'Platforms'
         end
         f.actions
     end
