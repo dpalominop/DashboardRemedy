@@ -54,8 +54,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-#ActiveAdmin
+# ActiveAdmin
 gem 'activeadmin'
 
 # ActiveAdmin_Addons
 gem 'activeadmin_addons'
+
+# ActiveAdmin Themes
+gem 'flattened_active_admin'

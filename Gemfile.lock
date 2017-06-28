@@ -94,6 +94,8 @@ GEM
     erubi (1.6.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    flattened_active_admin (0.0.7)
+      rails (>= 3.2.0)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -254,6 +256,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  flattened_active_admin
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
